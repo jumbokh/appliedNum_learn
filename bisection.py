@@ -20,6 +20,7 @@ def bisection(f,x1,x2,switch=1,tol=1.0e-9):
     
     for i in range(n):
         x3 = 0.5*(x1 + x2); f3 = f(x3)
+        print('{0:6.4f}'.format(x1),'{0:8.6f}'.format(x2),'{0:8.6f}'.format(x3),'{0:8.6f}'.format(f1),'{0:8.6f}'.format(f2),'{0:8.6f}'.format(f3))
         if (switch == 1) and (abs(f3) > abs(f1)) \
                          and (abs(f3) > abs(f2)):
             return None   
