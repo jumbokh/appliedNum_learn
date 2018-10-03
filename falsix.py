@@ -14,10 +14,11 @@ import math
 from numpy import sign
 
 def falsi(f,a,b,tol=1.0e-9):   
+    logdat = []
     fa = f(a)
-    if fa == 0.0: return a
+    if fa == 0.0: return a,logdat
     fb = f(b)
-    if fb == 0.0: return b
+    if fb == 0.0: return b,logdat
     if sign(fa) == sign(fb): error.err('Root is not bracketed')
     for i in range(30):
       # Compute the improved root x from falsi formula
@@ -25,19 +26,20 @@ def falsi(f,a,b,tol=1.0e-9):
         s = b - fb*(b-a)/(fb-fa)
         fx = f(s)
         print(i+1,'{0:8.6f}'.format(a),'{0:8.6f}'.format(b),'{0:8.6f}'.format(s),'{0:8.6f}'.format(fx))
-        if s == 0.0: return None
+        logdat.append([a,b,fa,fb,s])
+        if s == 0.0: return None, logdat
         
       # Test for convergence
         if i > 0:
             if abs(fx) < tol:
              print('regula falsi has coverged')
-             return s
+             return s,logdat
         
       # Re-bracket the root as tightly as possible
         if sign(fx) != sign(fa): 
              b = s; fb = fx
         else: a = s; fa = fx
-            
-    return None
-    print('Too many iterations')
+    print('Too many iterations')        
+    return s,logdat # None
+    
 
