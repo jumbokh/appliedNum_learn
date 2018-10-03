@@ -24,18 +24,20 @@ def falsi(f,a,b,tol=1.0e-9):
         
         s = b - fb*(b-a)/(fb-fa)
         fx = f(s)
+        print(i+1,'{0:8.6f}'.format(a),'{0:8.6f}'.format(b),'{0:8.6f}'.format(s),'{0:8.6f}'.format(fx))
         if s == 0.0: return None
         
       # Test for convergence
         if i > 0:
-            if abs(s - xOld) < tol*max(abs(s),1.0): return s
-        xOld = s
-        print(i,'{0:8.6f}'.format(a),'{0:8.6f}'.format(b),'{0:8.6f}'.format(s),'{0:8.6f}'.format(fx))    
+            if abs(fx) < tol:
+             print('regula falsi has coverged')
+             return s
+        
       # Re-bracket the root as tightly as possible
         if sign(fx) != sign(fa): 
              b = s; fb = fx
         else: a = s; fa = fx
-        
+            
     return None
     print('Too many iterations')
 
