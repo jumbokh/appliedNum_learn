@@ -2,10 +2,12 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
+    "### module linearsolver\n",
+    "\n",
     "def linearsolver(A,b):\n",
     "  n = len(A)\n",
     "  M = A\n",
@@ -37,76 +39,6 @@
     "    x[i] = float(M[i][n] - z)/M[i][i]\n",
     "  print (x)"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 3,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "from gauss_jordan import *"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 14,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "A = [[3, 2, -4], [2, 3, 3], [5, -3, 1]]\n",
-    "b = [3, 15, 14]"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 15,
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "[2.9999999999999996, 0.9999999999999996, 2.0]\n"
-     ]
-    }
-   ],
-   "source": [
-    "linearsolver(A,b)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 1,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "A = [[3,-1,2],[1,1,2],[2,-2,-1]]\n",
-    "b = [7,9,-5]"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 8,
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "[1.0, 2.0, 3.0]\n"
-     ]
-    }
-   ],
-   "source": [
-    "linearsolver(A,b)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
   }
  ],
  "metadata": {
