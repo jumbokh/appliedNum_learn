@@ -29,4 +29,4 @@ def gauss_jordan(A,b):
     for j in range(i+1,n):
         z = z  + float(M[i][j])*x[j]
     x[i] = float(M[i][n] - z)/M[i][i]
-  print x
+  print (x)
