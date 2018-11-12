@@ -12,7 +12,7 @@ def ppmat(matrix):
             
             f = Fraction(Decimal(number)).limit_denominator(1000)
             fstr = str(f)
-            print('{:>5}'.format(fstr),'  ',end='')
+            print('{:>5}'.format(fstr),'  ',end="")
 
             if i < size-1 :
               print(", ",end="")
