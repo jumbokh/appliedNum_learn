@@ -3,7 +3,7 @@
 using Givens Rotation
 """
 import numpy as np
-from QR import *
+from givens import *
 
 def QR_eig_G(A,maxit,tol):
     np.set_printoptions(precision=4, suppress=True)
@@ -12,14 +12,14 @@ def QR_eig_G(A,maxit,tol):
     for i in range(maxit):
         Q = np.eye(r)
         R = A
-        (Q, R) = givens_rotation(A)
-        A = R @ Q
+        (Q, R) = givens(A)
+        A = np.matmul(R,Q)
         t = np.empty(r)
         for j in range(c-1):
             t[j] = max(abs(A[j+1:c,j]))
         tt = max(t)
         if tt < tol:
-           print("QR method coverged",'step =%'%i)
+           print("QR method coverged",'step =',i,'%8.4f'%tt)
            break
         print("K: ",i+1)
         for k in range(r):
