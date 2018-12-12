@@ -12,7 +12,7 @@ def power_B(A,z,n,tol=0.0001):
           z = m/w1
           w = np.dot(A,z)
           r = np.linalg.norm(w-w1*z)
-          print(i+1,w1,r,z.T)
+          print(i+1,w1,'%8.5f'%r,z.T)
           print('===============================================')
           if( r < tol):
               print('Power Method has coverged')
