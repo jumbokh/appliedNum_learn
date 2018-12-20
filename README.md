@@ -11,3 +11,4 @@
 ### jupyter notebook
 
 ##### git jupyter notebook 及 conda env 需事先安裝設定
+* [colab教學一](https://hk.saowen.com/a/a809cd4385115f4925a41d5dea5ed1d3855c978cbc2d80360fb5e3e18ba1ef3b)
